@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   description:
     "Bangladesh's premier catering company. Serving corporate events, weddings, and house parties with authentic flavours and world-class service since 2006.",
   keywords: "spice catering, catering dhaka, bangladesh catering, wedding catering, corporate catering",
+  icons: {
+    icon: [{ url: "/assets/spice-logo.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
