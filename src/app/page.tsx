@@ -3,14 +3,8 @@ import { Gallery } from "@/components/Gallery";
 import { FeedbackWidget } from "@/components/FeedbackWidget";
 import { ContactForm } from "@/components/ContactForm";
 import { MenuTabs } from "@/components/MenuTabs";
+import { CurrencyConverter } from "@/components/CurrencyConverter";
 import { Phone, Mail, MapPin, Clock, Star, ChefHat, Users, Award } from "lucide-react";
-
-/* ─── Brand palette ──────────────────────────
-   Primary orange : #C0581A
-   Dark brown     : #1A1008
-   Cream          : #FAF7F2
-   Accent gold    : #D4A843
-─────────────────────────────────────────────── */
 
 const galleryItems = [
   {
@@ -113,14 +107,14 @@ export default function Home() {
           </div>
           <h1
             className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 animate-slide-up"
-            style={{ fontFamily: "var(--font-playfair)" }}
+            style={{ fontFamily: "var(--font-playfair)", letterSpacing: "0.05em" }}
           >
             Catering for<br />
             <span className="text-[#C0581A]">the Nation</span>
           </h1>
           <p className="text-lg md:text-xl text-stone-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Bangladesh&apos;s most trusted catering partner. From intimate house gatherings to
-            grand weddings and corporate canteens — SPICE delivers excellence every time.
+            Since 2006, Spice Catering has set the standard in Bangladesh — from intimate
+            dawats and grand weddings to corporate canteens serving thousands daily.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -222,7 +216,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SERVICES GALLERY (21st.dev Gallery4 pattern) ─────── */}
+      {/* ── SERVICES GALLERY ─────────────────────────────────── */}
       <section id="services">
         <Gallery
           title="Our Services"
@@ -243,11 +237,33 @@ export default function Home() {
               A Menu to Suit Every Occasion
             </h2>
             <p className="text-stone-500 mt-4 max-w-xl mx-auto">
-              Our menus are curated with the finest local produce and authentic Bangladeshi flavours.
-              All menus can be customised to your event and dietary requirements.
+              Five distinct cuisines, dozens of dishes — each prepared with the finest local produce
+              and authentic flavours. All menus are fully customisable.
             </p>
           </div>
           <MenuTabs />
+        </div>
+      </section>
+
+      {/* ── CURRENCY CONVERTER ───────────────────────────────── */}
+      <section id="currency" className="py-24 bg-[#FAF7F2]">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="text-[#C0581A] text-xs tracking-[0.3em] uppercase font-medium mb-4">Currency Converter</div>
+            <h2
+              className="text-4xl lg:text-5xl font-bold text-[#1A1008]"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              Planning From Abroad?
+            </h2>
+            <p className="text-stone-500 mt-4 max-w-xl mx-auto leading-relaxed">
+              Convert between Bangladeshi Taka and your home currency to get a clear picture
+              of your event budget — live exchange rates updated daily.
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <CurrencyConverter />
+          </div>
         </div>
       </section>
 
@@ -381,9 +397,13 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="h-10 w-10 rounded-full bg-[#C0581A] flex items-center justify-center shrink-0">
-                  <span className="text-white font-bold" style={{ fontFamily: "var(--font-playfair)" }}>SC</span>
+                  <svg width="22" height="22" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                    <circle cx="14" cy="5" r="2" fill="white" />
+                    <path d="M2 21 C2 11 7 5 14 5 C21 5 26 11 26 21 Z" fill="white" />
+                    <rect x="1" y="21" width="26" height="2.5" rx="1.25" fill="white" />
+                  </svg>
                 </div>
-                <div className="text-white font-bold" style={{ fontFamily: "var(--font-playfair)" }}>Spice Catering Ltd.</div>
+                <div className="text-white font-bold" style={{ fontFamily: "var(--font-playfair)", letterSpacing: "0.05em" }}>Spice Catering Ltd.</div>
               </div>
               <p className="text-sm leading-relaxed">
                 Bangladesh&apos;s most trusted catering partner since 2006. Serving excellence
