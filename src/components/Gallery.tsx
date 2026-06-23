@@ -59,7 +59,7 @@ const Gallery = ({
         </div>
       </div>
       <div className="w-full">
-        <Carousel setApi={setCarouselApi} opts={{ dragFree: true }}>
+        <Carousel setApi={setCarouselApi} enableWheelGestures opts={{ dragFree: true }}>
           <CarouselContent className="ml-6 lg:ml-[max(2rem,calc(50vw-680px))]">
             {items.map((item) => (
               <CarouselItem key={item.id} className="max-w-[320px] pl-5 lg:max-w-[380px]">

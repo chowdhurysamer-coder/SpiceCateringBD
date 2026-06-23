@@ -4,7 +4,15 @@ import { FeedbackWidget } from "@/components/FeedbackWidget";
 import { ContactForm } from "@/components/ContactForm";
 import { MenuTabs } from "@/components/MenuTabs";
 import { CurrencyConverter } from "@/components/CurrencyConverter";
-import { Phone, Mail, MapPin, Clock, Star, ChefHat, Users, Award } from "lucide-react";
+import { Logo } from "@/components/Logo";
+import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
+
+/* ─── Brand palette ──────────────────────────
+   Primary orange : #C0581A
+   Dark brown     : #1A1008
+   Cream          : #FAF7F2
+   Accent gold    : #D4A843
+─────────────────────────────────────────────── */
 
 const galleryItems = [
   {
@@ -75,13 +83,6 @@ const testimonials = [
   },
 ];
 
-const stats = [
-  { icon: <Award className="size-7" />, value: "18+", label: "Years of Excellence" },
-  { icon: <Users className="size-7" />, value: "500+", label: "Corporate Clients" },
-  { icon: <ChefHat className="size-7" />, value: "50+", label: "Expert Chefs" },
-  { icon: <Star className="size-7" />, value: "10k+", label: "Events Catered" },
-];
-
 const galleryStrip = [
   "https://images.unsplash.com/photo-1555244162-803834f70033?w=600&q=80",
   "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80",
@@ -137,21 +138,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── STATS BAR ────────────────────────────────────────── */}
-      <section className="bg-[#C0581A] py-12">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((s) => (
-              <div key={s.label} className="flex flex-col items-center text-white text-center">
-                <div className="mb-2 opacity-80">{s.icon}</div>
-                <div className="text-4xl font-bold" style={{ fontFamily: "var(--font-playfair)" }}>{s.value}</div>
-                <div className="text-sm text-orange-100 mt-1">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── ABOUT ────────────────────────────────────────────── */}
       <section id="about" className="py-24 bg-white">
         <div className="container mx-auto px-6 lg:px-8">
@@ -165,18 +151,32 @@ export default function Home() {
                 Catering Excellence<br />Since 2006
               </h2>
               <p className="text-stone-500 leading-relaxed mb-5">
-                After a year of careful preparation, SPICE was launched in Dhaka in 2006 with a
-                singular vision: to set the standard in catering excellence across Bangladesh.
+                After a year of preparation, SPICE was launched in Dhaka in 2006. The company has
+                gone from strength to strength, growing each year in size and popularity. Today
+                the company employs many professional catering staff with years of experience
+                across several countries, and operates kitchens in a premium location in Gulshan.
               </p>
+              <p className="text-stone-600 font-medium mb-3">Our business is catering for:</p>
+              <ul className="space-y-2.5 mb-6">
+                {[
+                  "Annual general meetings, corporate events, canteens and company picnics",
+                  "Weddings, walimas and mehendis",
+                  "House catering for gatherings of family and friends",
+                  "Servicing and managing large venues such as the Bangabandhu International and Bashundhara Convention Centres",
+                ].map((point) => (
+                  <li key={point} className="flex gap-3 text-stone-500 leading-relaxed">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#C0581A] shrink-0" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
               <p className="text-stone-500 leading-relaxed mb-5">
-                For nearly two decades, SPICE has met the catering needs of many of the best-known
-                companies in the country. The most recognised names in banking, telecoms, power,
-                pharmaceuticals, and international development organisations have all been serviced by SPICE.
+                SPICE has expertise in event management and can assist with most aspects of your
+                event, supported by partners who are experts in their field. We have catered for
+                gatherings of 25 to 2,500 guests, from Sylhet to Chittagong.
               </p>
               <p className="text-stone-500 leading-relaxed mb-8">
-                We look after our staff so that they will look after our clients. We invest heavily
-                in transport, equipment, and training — because our word is our bond, and we
-                continuously strive not only to meet your expectations, but to exceed them.
+                We look forward to building a real relationship with you — for life.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex items-center gap-3 text-sm text-stone-600">
@@ -216,7 +216,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SERVICES GALLERY ─────────────────────────────────── */}
+      {/* ── SERVICES GALLERY (21st.dev Gallery4 pattern) ─────── */}
       <section id="services">
         <Gallery
           title="Our Services"
@@ -237,8 +237,8 @@ export default function Home() {
               A Menu to Suit Every Occasion
             </h2>
             <p className="text-stone-500 mt-4 max-w-xl mx-auto">
-              Five distinct cuisines, dozens of dishes — each prepared with the finest local produce
-              and authentic flavours. All menus are fully customisable.
+              Five distinct cuisines, dozens of dishes — each prepared with the finest local
+              produce and authentic flavours. Browse the menus below; all are fully customisable.
             </p>
           </div>
           <MenuTabs />
@@ -257,8 +257,7 @@ export default function Home() {
               Planning From Abroad?
             </h2>
             <p className="text-stone-500 mt-4 max-w-xl mx-auto leading-relaxed">
-              Convert between Bangladeshi Taka and your home currency to get a clear picture
-              of your event budget — live exchange rates updated daily.
+              Convert between Bangladeshi Taka and your home currency to get a clear picture of your event budget — live exchange rates updated daily.
             </p>
           </div>
           <div className="max-w-3xl mx-auto">
@@ -395,15 +394,9 @@ export default function Home() {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-10 mb-10">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-10 w-10 rounded-full bg-[#C0581A] flex items-center justify-center shrink-0">
-                  <svg width="22" height="22" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                    <circle cx="14" cy="5" r="2" fill="white" />
-                    <path d="M2 21 C2 11 7 5 14 5 C21 5 26 11 26 21 Z" fill="white" />
-                    <rect x="1" y="21" width="26" height="2.5" rx="1.25" fill="white" />
-                  </svg>
-                </div>
-                <div className="text-white font-bold" style={{ fontFamily: "var(--font-playfair)", letterSpacing: "0.05em" }}>Spice Catering Ltd.</div>
+              <div className="flex items-center gap-3 mb-4 text-white">
+                <Logo size={44} className="shrink-0" />
+                <div className="font-bold" style={{ fontFamily: "var(--font-playfair)", letterSpacing: "0.05em" }}>Spice Catering Ltd.</div>
               </div>
               <p className="text-sm leading-relaxed">
                 Bangladesh&apos;s most trusted catering partner since 2006. Serving excellence

@@ -13,6 +13,8 @@ interface CarouselProps {
   opts?: CarouselOptions;
   plugins?: CarouselPlugin;
   setApi?: (api: CarouselApi) => void;
+  /** Translate horizontal trackpad / mouse-wheel gestures into carousel scrolling. */
+  enableWheelGestures?: boolean;
 }
 
 type CarouselContextProps = {
@@ -31,13 +33,35 @@ function useCarousel() {
 const Carousel = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & CarouselProps
->(({ opts, plugins, setApi, className, children, ...props }, ref) => {
+>(({ opts, plugins, setApi, enableWheelGestures, className, children, ...props }, ref) => {
   const [carouselRef, api] = useEmblaCarousel({ axis: "x", ...opts }, plugins);
 
   React.useEffect(() => {
     if (!api || !setApi) return;
     setApi(api);
   }, [api, setApi]);
+
+  // Trackpad two-finger swipes (and shift+wheel) arrive as wheel events, not drag
+  // events, so we forward predominantly-horizontal wheel deltas to Embla. Vertical
+  // scrolling is left untouched so the page still scrolls normally.
+  React.useEffect(() => {
+    if (!api || !enableWheelGestures) return;
+    const root = api.rootNode();
+    let locked = false;
+
+    const onWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+      e.preventDefault();
+      if (locked) return;
+      if (e.deltaX > 0) api.scrollNext();
+      else api.scrollPrev();
+      locked = true;
+      window.setTimeout(() => { locked = false; }, 220);
+    };
+
+    root.addEventListener("wheel", onWheel, { passive: false });
+    return () => root.removeEventListener("wheel", onWheel);
+  }, [api, enableWheelGestures]);
 
   return (
     <CarouselContext.Provider value={{ carouselRef, api, opts, plugins, setApi }}>
