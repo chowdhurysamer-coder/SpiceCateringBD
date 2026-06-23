@@ -6,7 +6,7 @@ const menu = [
   {
     id: "bangla",
     label: "Bangla",
-    tagline: "Authentic Bengali home cooking — the heart of Bangladeshi tradition.",
+    tagline: "Authentic Bengali home cooking, the heart of Bangladeshi tradition.",
     sections: [
       { name: "Bread & Rice", items: ["Plain Steamed Rice", "Vegetable Pulao", "Chicken Biriyani", "Mutton Biriyani", "Beef Biriyani", "Khichuri", "Nan", "Paratha", "Roti", "Luchi", "Chapati"] },
       { name: "Veg & Bhortas", items: ["Begun Bharta", "Aloo Bharta", "Mixed Seasonal Veg", "Dal Masur", "Dal Moog", "Deshi Dal", "Shorshe Bata", "Shim Bhaji", "Kanchkola Bhaji"] },
@@ -18,7 +18,7 @@ const menu = [
   {
     id: "thai",
     label: "Thai",
-    tagline: "Aromatic herbs and bold spices — the finest of South-East Asian cuisine.",
+    tagline: "Aromatic herbs and bold spices: the finest of South-East Asian cuisine.",
     sections: [
       { name: "Appetisers", items: ["Spring Rolls", "Chicken Satay", "Thai Fish Cake", "Prawn Crackers"] },
       { name: "Soups", items: ["Tom Yum Goong", "Tom Kha Gai", "Wonton Soup"] },
@@ -44,7 +44,7 @@ const menu = [
   {
     id: "indian",
     label: "Indian",
-    tagline: "A rich Mughal heritage — tandoor-fired and slow-cooked to perfection.",
+    tagline: "A rich Mughal heritage, tandoor-fired and slow-cooked to perfection.",
     sections: [
       { name: "Appetisers", items: ["Samosa", "Paneer Tikka", "Seekh Kebab", "Chicken Tikka", "Aloo Tikki"] },
       { name: "Tandoori", items: ["Tandoori Chicken", "Lamb Chops", "Prawn Tandoori", "Tandoori Paneer"] },
