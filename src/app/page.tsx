@@ -378,8 +378,11 @@ export default function Home() {
               <div className="pt-4">
                 <div className="text-xs text-stone-400 uppercase tracking-widest mb-4">Follow Us</div>
                 <div className="flex gap-3">
-                  {["Facebook", "Instagram", "WhatsApp"].map((s) => (
-                    <span key={s} className="border border-stone-300 hover:border-[#C0581A] text-stone-500 hover:text-[#C0581A] text-xs px-4 py-2 transition-colors cursor-pointer">{s}</span>
+                  {[
+                    { label: "Facebook", href: "https://www.facebook.com/SPICECATERINGLTD/" },
+                    { label: "Instagram", href: "https://www.instagram.com/spicecateringbd/" },
+                  ].map(({ label, href }) => (
+                    <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="border border-stone-300 hover:border-[#C0581A] text-stone-500 hover:text-[#C0581A] text-xs px-4 py-2 transition-colors">{label}</a>
                   ))}
                 </div>
               </div>
