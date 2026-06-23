@@ -103,7 +103,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#1A1008]/75 via-[#1A1008]/55 to-[#1A1008]/80" />
 
         <div className="relative z-10 px-6 max-w-5xl mx-auto">
-          <div className="text-xs text-[#C0581A] tracking-[0.3em] uppercase mb-6">
+          <div className="text-sm text-[#C0581A] tracking-[0.3em] uppercase mb-6" style={{ textShadow: "0 0 16px rgba(255,255,255,0.75), 0 0 4px rgba(255,255,255,0.5)" }}>
             Est. 2006 · Dhaka, Bangladesh
           </div>
           <h1
@@ -213,7 +213,7 @@ export default function Home() {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-5 max-w-[200px]">
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-5 max-w-[200px]" style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.22), 0 2px 12px rgba(0,0,0,0.14)" }}>
                 <div className="text-[#C0581A] font-bold text-3xl" style={{ fontFamily: "var(--font-playfair)" }}>4.3★</div>
                 <div className="text-xs text-stone-500 mt-1">Average rating across 800+ reviews</div>
               </div>
