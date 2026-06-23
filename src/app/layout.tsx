@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${playfair.variable} ${montserrat.variable} h-full antialiased`}>
       <head>
-        <link rel="icon" type="image/svg+xml" href={`${basePath}/assets/spice-logo.svg`} />
+        <link rel="icon" type="image/svg+xml" href={`${basePath}/assets/image (1).svg`} />
         <link rel="icon" type="image/png" href={`${basePath}/assets/spicecatering-logo.png`} />
         <link rel="apple-touch-icon" href={`${basePath}/assets/spicecatering-logo.png`} />
       </head>
