@@ -419,14 +419,13 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-stone-600 text-xs">&copy; {new Date().getFullYear()} Spice Catering Ltd. All rights reserved.</div>
+            <FeedbackWidget />
             <div className="text-stone-700 text-xs">Dhaka, Bangladesh · Est. 2006</div>
           </div>
         </div>
       </footer>
-
-      <FeedbackWidget />
     </div>
   );
 }
