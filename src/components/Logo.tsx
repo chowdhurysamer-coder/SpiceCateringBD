@@ -21,7 +21,7 @@ interface LogoProps {
  */
 export const Logo = ({
   size = 48,
-  src = "assets/spice-logo.svg",
+  src = "assets/spice-logo.png",
   className = "",
   alt = "Spice Catering",
 }: LogoProps) => {
