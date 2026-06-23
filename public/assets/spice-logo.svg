@@ -1,30 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
-  <!-- Steam wisps: cream so they show on the dark navbar -->
-  <path d="M47 32 Q44 26 47 20 Q50 14 47 8" stroke="#FAF7F2" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-  <path d="M60 30 Q57 24 60 18 Q63 12 60 6" stroke="#FAF7F2" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-  <path d="M73 32 Q70 26 73 20 Q76 14 73 8" stroke="#FAF7F2" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<svg xmlns="http://w3.org" viewBox="0 0 1000 625" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="1000" height="625" fill="#E6E6E6"/>
 
-  <!-- Cloche dome -->
-  <path d="M22 70 Q22 40 60 40 Q98 40 98 70 Z" fill="#E8925A"/>
+  <!-- Steaming Vapor (Gray Lines) -->
+  <g fill="none" stroke="#A6A6A6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer/Right stream loop -->
+    <path d="M 645,248 
+             C 660,230, 675,200, 665,175 
+             C 655,150, 615,145, 600,170 
+             C 585,195, 620,230, 635,255
+             C 650,280, 640,310, 630,325 
+             C 625,332, 620,338, 615,342" />
+    
+    <!-- Inner/Left stream loop -->
+    <path d="M 585,200 
+             C 575,175, 550,150, 525,160 
+             C 500,170, 505,210, 530,220 
+             C 555,230, 580,215, 595,240 
+             C 610,265, 590,300, 570,320" />
+  </g>
 
-  <!-- Knob / handle -->
-  <ellipse cx="60" cy="40" rx="6" ry="4" fill="#E8925A"/>
-  <ellipse cx="60" cy="38" rx="4" ry="2.8" fill="#FAF7F2" opacity="0.35"/>
+  <!-- Main Illustration (Terracotta Color) -->
+  <g fill="#C47D5A">
+    <!-- Food Cloche / Dome Lid -->
+    <!-- Handle knob -->
+    <path d="M 480,185 
+             C 480,172, 490,170, 500,170 
+             C 510,170, 520,172, 520,185 
+             C 520,193, 512,195, 508,198 
+             L 508,205 
+             L 492,205 
+             L 492,198 
+             C 488,195, 480,193, 480,185 Z" />
+    
+    <!-- Dome body -->
+    <path d="M 500,208 
+             C 590,208, 655,260, 668,322 
+             L 332,322 
+             C 345,260, 410,208, 500,208 Z" />
 
-  <!-- Tray -->
-  <rect x="16" y="70" width="88" height="6.5" rx="3.2" fill="#E8925A"/>
+    <!-- Serving Platter / Tray -->
+    <path d="M 295,335 
+             C 295,331, 305,330, 320,330 
+             L 680,330 
+             C 695,330, 705,331, 705,335 
+             C 705,339, 695,340, 680,340 
+             L 320,340 
+             C 305,340, 295,339, 295,335 Z" />
 
-  <!-- Hand / fingers -->
-  <!-- Palm -->
-  <rect x="43" y="76.5" width="34" height="10" rx="5" fill="#E8925A"/>
-  <!-- Fingers -->
-  <rect x="45" y="85.5" width="5.5" height="15" rx="2.7" fill="#E8925A"/>
-  <rect x="53.5" y="86.5" width="5.5" height="16" rx="2.7" fill="#E8925A"/>
-  <rect x="62" y="86.5" width="5.5" height="16" rx="2.7" fill="#E8925A"/>
-  <rect x="70.5" y="85.5" width="5.5" height="15" rx="2.7" fill="#E8925A"/>
-  <!-- Thumb -->
-  <path d="M43 82 Q36 79 34 83.5 Q32 88 37 90 Q41 91 43 87" fill="#E8925A"/>
-
-  <!-- Subtle highlight on dome -->
-  <path d="M36 58 Q40 50 60 48" stroke="#FAF7F2" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.25"/>
+    <!-- Waiter's Hand and Wrist -->
+    <path d="M 390,349 
+             C 400,349, 415,355, 428,375 
+             C 445,402, 480,410, 495,375 
+             C 502,358, 505,350, 512,349 
+             C 518,349, 520,358, 522,370 
+             C 525,385, 532,410, 555,420 
+             C 572,427, 580,410, 582,395 
+             C 585,375, 582,360, 588,349 
+             C 592,349, 595,355, 598,368 
+             C 605,395, 600,430, 595,465 
+             C 593,478, 585,490, 585,490 
+             C 585,490, 580,480, 582,465 
+             C 585,440, 590,415, 582,398 
+             C 575,415, 565,432, 545,432 
+             C 520,432, 512,410, 508,390 
+             C 500,415, 480,440, 465,465 
+             C 450,490, 435,510, 432,530 
+             C 432,530, 428,515, 432,495 
+             C 438,470, 455,445, 470,415 
+             C 455,420, 440,415, 428,398 
+             C 415,380, 402,365, 390,361 
+             C 385,359, 385,349, 390,349 Z" />
+  </g>
 </svg>
