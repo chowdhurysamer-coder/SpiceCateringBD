@@ -9,7 +9,7 @@ const PREFIX = process.env.NODE_ENV === "production" ? "/SpiceCateringBD" : "";
 interface LogoProps {
   /** Height of the logo in pixels. */
   size?: number;
-  /** Path inside /public — defaults to the cloche mark asset. */
+  /** Path inside /public — defaults to the real cloche logo. */
   src?: string;
   className?: string;
   alt?: string;
@@ -21,7 +21,7 @@ interface LogoProps {
  */
 export const Logo = ({
   size = 48,
-  src = "assets/spice-logo.png",
+  src = "assets/spicecatering-logo.png",
   className = "",
   alt = "Spice Catering",
 }: LogoProps) => {
