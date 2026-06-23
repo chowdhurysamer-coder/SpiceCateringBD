@@ -115,7 +115,7 @@ export default function Home() {
             Catering for<br />
             <span
               className="text-[#C0581A]"
-              style={{ textShadow: "-1px -1px 0 rgba(0,0,0,0.45), 1px -1px 0 rgba(0,0,0,0.45), -1px 1px 0 rgba(0,0,0,0.45), 1px 1px 0 rgba(0,0,0,0.45), 0 3px 18px rgba(0,0,0,0.7)" }}
+              style={{ textShadow: "0 4px 24px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.6)" }}
             >
               the Nation
             </span>
@@ -148,65 +148,77 @@ export default function Home() {
       </section>
 
       {/* ── ABOUT ────────────────────────────────────────────── */}
-      <section id="about" className="py-24 bg-[#FAF7F2]">
+      <section id="about" className="py-24 bg-white">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="text-xs text-[#C0581A] tracking-[0.3em] uppercase mb-4">Our Story</div>
+              <div className="text-[#C0581A] text-xs tracking-[0.3em] uppercase font-medium mb-4">About Us</div>
               <h2
                 className="text-3xl md:text-4xl lg:text-5xl text-[#1A1008] leading-tight mb-8"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 Two decades of culinary excellence
               </h2>
-              <div className="space-y-5 text-stone-500 leading-relaxed">
-                <p>
-                  Founded in 2006 in Dhaka, Spice Catering began as a small family operation with
-                  a simple belief: every meal deserves the same care and quality, whether it is
-                  served to two people or two thousand.
-                </p>
-                <p>
-                  Today we are one of Bangladesh's most trusted catering companies, with a team
-                  of experienced chefs, event coordinators and logistics specialists who together
-                  deliver hundreds of events every year.
-                </p>
-                <p>
-                  From boardroom lunches to grand wedding feasts and daily corporate canteens,
-                  our passion for great food and exceptional service has never wavered.
-                </p>
-              </div>
-              <div className="mt-10 grid grid-cols-3 gap-6">
+              <p className="text-stone-500 leading-relaxed mb-5">
+                After a year of preparation, SPICE was launched in Dhaka in 2006. The company has
+                gone from strength to strength, growing each year in size and popularity. Today
+                the company employs many professional catering staff with years of experience
+                across several countries, and operates kitchens in a premium location in Gulshan.
+              </p>
+              <p className="text-stone-600 font-medium mb-3">Our business is catering for:</p>
+              <ul className="space-y-2.5 mb-6">
                 {[
-                  { number: "18+", label: "Years Experience" },
-                  { number: "500+", label: "Events Per Year" },
-                  { number: "50+", label: "Corporate Clients" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center">
-                    <div
-                      className="text-3xl font-bold text-[#C0581A] mb-1"
-                      style={{ fontFamily: "var(--font-playfair)" }}
-                    >
-                      {s.number}
-                    </div>
-                    <div className="text-xs text-stone-400 uppercase tracking-widest">{s.label}</div>
-                  </div>
+                  "Annual general meetings, corporate events, canteens and company picnics",
+                  "Weddings, walimas and mehendis",
+                  "House catering for gatherings of family and friends",
+                  "Servicing and managing large venues such as the Bangabandhu International and Bashundhara Convention Centres",
+                ].map((point) => (
+                  <li key={point} className="flex gap-3 text-stone-500 leading-relaxed">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#C0581A] shrink-0" />
+                    <span>{point}</span>
+                  </li>
                 ))}
+              </ul>
+              <p className="text-stone-500 leading-relaxed mb-5">
+                SPICE has expertise in event management and can assist with most aspects of your
+                event, supported by partners who are experts in their field. We have catered for
+                gatherings of 25 to 2,500 guests, from Sylhet to Chittagong.
+              </p>
+              <p className="text-stone-500 leading-relaxed mb-8">
+                We look forward to building a real relationship with you, for life.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <div className="flex items-center gap-3 text-sm text-stone-600">
+                  <div className="h-10 w-10 rounded-full bg-[#C0581A]/10 flex items-center justify-center shrink-0">
+                    <Phone className="size-4 text-[#C0581A]" />
+                  </div>
+                  <div>
+                    <div className="font-medium">24-Hour Contact</div>
+                    <div className="text-[#C0581A] font-bold text-base">01938-555666</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 text-sm text-stone-600">
+                  <div className="h-10 w-10 rounded-full bg-[#C0581A]/10 flex items-center justify-center shrink-0">
+                    <MapPin className="size-4 text-[#C0581A]" />
+                  </div>
+                  <div>
+                    <div className="font-medium">Office</div>
+                    <div>House 12, Road 33, Gulshan 1, Dhaka</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80"
-                alt="Our kitchen"
-                className="rounded-2xl w-full aspect-[4/5] object-cover shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl">
-                <div className="flex items-center gap-1 mb-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className={`size-4 ${i < 4 ? "fill-[#D4A843] text-[#D4A843]" : "fill-none text-[#D4A843]"}`} />
-                  ))}
-                  <span className="ml-1 text-sm font-semibold text-[#1A1008]">4.3</span>
-                </div>
-                <div className="text-xs text-stone-400">800+ reviews</div>
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+                  alt="Spice Catering food"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-5 max-w-[200px]">
+                <div className="text-[#C0581A] font-bold text-3xl" style={{ fontFamily: "var(--font-playfair)" }}>4.3★</div>
+                <div className="text-xs text-stone-500 mt-1">Average rating across 800+ reviews</div>
               </div>
             </div>
           </div>
@@ -348,30 +360,10 @@ export default function Home() {
             {/* Contact info */}
             <div className="space-y-8">
               {[
-                {
-                  icon: Phone,
-                  label: "Phone",
-                  value: "01938-555666",
-                  href: "tel:+8801938555666",
-                },
-                {
-                  icon: Mail,
-                  label: "Email",
-                  value: "info@spicecateringbd.com",
-                  href: "mailto:info@spicecateringbd.com",
-                },
-                {
-                  icon: MapPin,
-                  label: "Address",
-                  value: "Dhaka, Bangladesh",
-                  href: null,
-                },
-                {
-                  icon: Clock,
-                  label: "Hours",
-                  value: "Sat to Thu, 9 am to 9 pm",
-                  href: null,
-                },
+                { icon: Phone, label: "Phone", value: "01938-555666", href: "tel:+8801938555666" },
+                { icon: Mail, label: "Email", value: "info@spicecateringbd.com", href: "mailto:info@spicecateringbd.com" },
+                { icon: MapPin, label: "Address", value: "Dhaka, Bangladesh", href: null },
+                { icon: Clock, label: "Hours", value: "Sat to Thu, 9 am to 9 pm", href: null },
               ].map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="flex items-start gap-4">
                   <div className="h-10 w-10 rounded-full bg-[#C0581A]/15 flex items-center justify-center shrink-0">
@@ -380,32 +372,22 @@ export default function Home() {
                   <div>
                     <div className="text-xs text-stone-500 uppercase tracking-widest mb-1">{label}</div>
                     {href ? (
-                      <a href={href} className="text-stone-200 hover:text-[#C0581A] transition-colors">
-                        {value}
-                      </a>
+                      <a href={href} className="text-stone-200 hover:text-[#C0581A] transition-colors">{value}</a>
                     ) : (
                       <div className="text-stone-200">{value}</div>
                     )}
                   </div>
                 </div>
               ))}
-
               <div className="pt-4">
                 <div className="text-xs text-stone-500 uppercase tracking-widest mb-4">Follow Us</div>
                 <div className="flex gap-3">
                   {["Facebook", "Instagram", "WhatsApp"].map((s) => (
-                    <span
-                      key={s}
-                      className="border border-stone-700 hover:border-[#C0581A] text-stone-400 hover:text-[#C0581A] text-xs px-4 py-2 transition-colors cursor-pointer"
-                    >
-                      {s}
-                    </span>
+                    <span key={s} className="border border-stone-700 hover:border-[#C0581A] text-stone-400 hover:text-[#C0581A] text-xs px-4 py-2 transition-colors cursor-pointer">{s}</span>
                   ))}
                 </div>
               </div>
             </div>
-
-            {/* Contact form */}
             <ContactForm />
           </div>
         </div>
@@ -428,13 +410,7 @@ export default function Home() {
               <div className="text-stone-300 text-xs tracking-widest uppercase mb-4">Quick Links</div>
               <div className="flex flex-col gap-2">
                 {["About Us", "Services", "Menus", "Gallery", "Contact"].map((l) => (
-                  <a
-                    key={l}
-                    href={`#${l.toLowerCase().replace(" ", "-")}`}
-                    className="text-stone-500 hover:text-[#C0581A] text-sm transition-colors"
-                  >
-                    {l}
-                  </a>
+                  <a key={l} href={`#${l.toLowerCase().replace(" ", "-")}`} className="text-stone-500 hover:text-[#C0581A] text-sm transition-colors">{l}</a>
                 ))}
               </div>
             </div>
@@ -448,9 +424,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-stone-600 text-xs">
-              &copy; {new Date().getFullYear()} Spice Catering Ltd. All rights reserved.
-            </div>
+            <div className="text-stone-600 text-xs">&copy; {new Date().getFullYear()} Spice Catering Ltd. All rights reserved.</div>
             <div className="text-stone-700 text-xs">Dhaka, Bangladesh · Est. 2006</div>
           </div>
         </div>

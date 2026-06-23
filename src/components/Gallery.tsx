@@ -34,13 +34,11 @@ const Gallery = ({
     const updateSelection = () => {
       setCanScrollPrev(carouselApi.canScrollPrev());
       setCanScrollNext(carouselApi.canScrollNext());
-      const inView = carouselApi.slidesInView();
-      setCurrentSlide(inView.length > 0 ? inView[inView.length - 1] : carouselApi.selectedScrollSnap());
+      setCurrentSlide(carouselApi.selectedScrollSnap());
     };
     updateSelection();
     carouselApi.on("select", updateSelection);
-    carouselApi.on("scroll", updateSelection);
-    return () => { carouselApi.off("select", updateSelection); carouselApi.off("scroll", updateSelection); };
+    return () => { carouselApi.off("select", updateSelection); };
   }, [carouselApi]);
 
   // Close on Escape
@@ -71,8 +69,8 @@ const Gallery = ({
           </div>
         </div>
         <div className="w-full">
-          <Carousel setApi={setCarouselApi} enableWheelGestures opts={{ dragFree: true }}>
-            <CarouselContent className="ml-6 lg:ml-[max(2rem,calc(50vw-680px))] pr-16 lg:pr-[max(8rem,calc(50vw-600px))]">
+          <Carousel setApi={setCarouselApi} enableWheelGestures opts={{ align: "start", containScroll: "trimSnaps" }}>
+            <CarouselContent className="ml-4 lg:ml-8">
               {items.map((item) => (
                 <CarouselItem key={item.id} className="max-w-[320px] pl-5 lg:max-w-[380px]">
                   <button
@@ -92,6 +90,8 @@ const Gallery = ({
                   </button>
                 </CarouselItem>
               ))}
+              {/* Trailing spacer so Home Delivery has right breathing room */}
+              <CarouselItem className="pl-5 max-w-[2rem] lg:max-w-[3rem] pointer-events-none" aria-hidden />
             </CarouselContent>
           </Carousel>
           <div className="mt-8 pb-2 flex justify-center gap-2">
@@ -113,19 +113,12 @@ const Gallery = ({
           className="fixed inset-0 z-50 flex items-center justify-center p-6"
           onClick={() => setExpanded(null)}
         >
-          {/* Backdrop */}
           <div className="absolute inset-0 bg-[#1A1008]/70 backdrop-blur-sm" />
-
-          {/* Card */}
           <div
             className="relative z-10 max-w-lg w-full rounded-2xl overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={expanded.image}
-              alt={expanded.title}
-              className="w-full h-56 object-cover"
-            />
+            <img src={expanded.image} alt={expanded.title} className="w-full h-56 object-cover" />
             <div className="absolute top-0 inset-x-0 h-56 bg-gradient-to-b from-[#1A1008]/30 to-transparent" />
             <button
               className="absolute top-4 right-4 h-8 w-8 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-colors"
