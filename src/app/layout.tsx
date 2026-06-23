@@ -19,7 +19,7 @@ const basePath = process.env.NODE_ENV === "production" ? "/SpiceCateringBD" : ""
 export const metadata: Metadata = {
   title: "Spice Catering Ltd. | Dhaka, Bangladesh",
   description:
-    "Bangladesh's premier catering company. Serving corporate events, weddings, and house parties with authentic flavours and world-class service since 2006.",
+    "Bangladesh's premier catering company. Serving corporate events, weddings, and house parties with authentic flavours and world-class service since 2004.",
   keywords: "spice catering, catering dhaka, bangladesh catering, wedding catering, corporate catering",
 };
 

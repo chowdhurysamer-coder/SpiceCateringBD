@@ -104,7 +104,7 @@ export default function Home() {
 
         <div className="relative z-10 px-6 max-w-5xl mx-auto">
           <div className="text-base text-[#C0581A] tracking-[0.3em] uppercase mb-6" style={{ textShadow: "0 0 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)" }}>
-            Est. 2006 · Dhaka, Bangladesh
+            Est. 2004 · Dhaka, Bangladesh
           </div>
           <h1
             className="text-white text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 animate-slide-up"
@@ -119,7 +119,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-stone-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Since 2006, Spice Catering has set the standard in Bangladesh, from intimate
+            Since 2004, Spice Catering has set the standard in Bangladesh, from intimate
             dawats and grand weddings to corporate canteens serving thousands daily.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -157,7 +157,7 @@ export default function Home() {
                 Two decades of culinary excellence
               </h2>
               <p className="text-stone-500 leading-relaxed mb-5">
-                After a year of preparation, SPICE was launched in Dhaka in 2006. The company has
+                After a year of preparation, SPICE was launched in Dhaka in 2004. The company has
                 gone from strength to strength, growing each year in size and popularity. Today
                 the company employs many professional catering staff with years of experience
                 across several countries, and operates kitchens in a premium location in Gulshan.
@@ -402,7 +402,7 @@ export default function Home() {
                 <span className="font-serif text-white text-lg">Spice Catering</span>
               </a>
               <p className="text-stone-500 text-sm leading-relaxed">
-                Bangladesh's premier catering company. Serving excellence since 2006.
+                Bangladesh's premier catering company. Serving excellence since 2004.
               </p>
             </div>
             <div>
@@ -425,7 +425,7 @@ export default function Home() {
           <div className="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-stone-600 text-xs">&copy; {new Date().getFullYear()} Spice Catering Ltd. All rights reserved.</div>
             <FeedbackWidget />
-            <div className="text-stone-700 text-xs">Dhaka, Bangladesh · Est. 2006</div>
+            <div className="text-stone-700 text-xs">Dhaka, Bangladesh · Est. 2004</div>
           </div>
         </div>
       </footer>
