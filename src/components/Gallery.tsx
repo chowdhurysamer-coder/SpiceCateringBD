@@ -34,11 +34,13 @@ const Gallery = ({
     const updateSelection = () => {
       setCanScrollPrev(carouselApi.canScrollPrev());
       setCanScrollNext(carouselApi.canScrollNext());
-      setCurrentSlide(carouselApi.selectedScrollSnap());
+      const inView = carouselApi.slidesInView();
+      setCurrentSlide(inView.length > 0 ? inView[inView.length - 1] : carouselApi.selectedScrollSnap());
     };
     updateSelection();
     carouselApi.on("select", updateSelection);
-    return () => { carouselApi.off("select", updateSelection); };
+    carouselApi.on("scroll", updateSelection);
+    return () => { carouselApi.off("select", updateSelection); carouselApi.off("scroll", updateSelection); };
   }, [carouselApi]);
 
   // Close on Escape
@@ -70,7 +72,7 @@ const Gallery = ({
         </div>
         <div className="w-full">
           <Carousel setApi={setCarouselApi} enableWheelGestures opts={{ dragFree: true }}>
-            <CarouselContent className="ml-6 lg:ml-[max(2rem,calc(50vw-680px))] pr-6 lg:pr-[max(2rem,calc(50vw-680px))]">
+            <CarouselContent className="ml-6 lg:ml-[max(2rem,calc(50vw-680px))] pr-16 lg:pr-[max(8rem,calc(50vw-600px))]">
               {items.map((item) => (
                 <CarouselItem key={item.id} className="max-w-[320px] pl-5 lg:max-w-[380px]">
                   <button
