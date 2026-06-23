@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Gray background circle -->
+  <circle cx="60" cy="60" r="60" fill="#6B6B6B"/>
+
+  <!-- Steam wisps -->
+  <path d="M48 28 Q46 23 48 18 Q50 13 48 8" stroke="#C0581A" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <path d="M60 26 Q58 21 60 16 Q62 11 60 6" stroke="#C0581A" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <path d="M72 28 Q70 23 72 18 Q74 13 72 8" stroke="#C0581A" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+
+  <!-- Cloche dome -->
+  <path d="M25 68 Q25 38 60 38 Q95 38 95 68 Z" fill="#C0581A"/>
+
+  <!-- Cloche handle knob -->
+  <ellipse cx="60" cy="38" rx="6" ry="4" fill="#C0581A"/>
+  <ellipse cx="60" cy="36" rx="4" ry="3" fill="#D4682A"/>
+
+  <!-- Tray / platter -->
+  <rect x="18" y="68" width="84" height="6" rx="3" fill="#C0581A"/>
+
+  <!-- Hand holding tray -->
+  <!-- Palm -->
+  <rect x="44" y="74" width="32" height="10" rx="5" fill="#C0581A"/>
+  <!-- Fingers -->
+  <rect x="46" y="83" width="5" height="14" rx="2.5" fill="#C0581A"/>
+  <rect x="54" y="84" width="5" height="15" rx="2.5" fill="#C0581A"/>
+  <rect x="62" y="84" width="5" height="15" rx="2.5" fill="#C0581A"/>
+  <rect x="70" y="83" width="5" height="14" rx="2.5" fill="#C0581A"/>
+  <!-- Thumb -->
+  <path d="M44 78 Q38 76 36 80 Q34 84 38 86 Q42 87 44 84" fill="#C0581A"/>
+</svg>
