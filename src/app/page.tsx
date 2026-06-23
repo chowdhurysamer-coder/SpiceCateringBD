@@ -103,7 +103,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#1A1008]/75 via-[#1A1008]/55 to-[#1A1008]/80" />
 
         <div className="relative z-10 px-6 max-w-5xl mx-auto">
-          <div className="text-base text-[#C0581A] tracking-[0.3em] uppercase mb-6" style={{ textShadow: "0 0 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)" }}>
+          <div className="text-base text-[#E8925A] tracking-[0.3em] uppercase mb-6" style={{ textShadow: "0 0 20px rgba(0,0,0,1), 0 0 8px rgba(0,0,0,0.9), 0 2px 4px rgba(0,0,0,0.8)" }}>
             Est. 2004 · Dhaka, Bangladesh
           </div>
           <h1
