@@ -41,7 +41,6 @@ const Gallery = ({
     return () => { carouselApi.off("select", updateSelection); };
   }, [carouselApi]);
 
-  // Close on Escape
   useEffect(() => {
     if (!expanded) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setExpanded(null); };
@@ -90,11 +89,10 @@ const Gallery = ({
                   </button>
                 </CarouselItem>
               ))}
-              {/* Trailing spacer so Home Delivery has right breathing room */}
               <CarouselItem className="pl-5 max-w-[2rem] lg:max-w-[3rem] pointer-events-none" aria-hidden />
             </CarouselContent>
           </Carousel>
-          <div className="mt-8 pb-2 flex justify-center gap-2">
+          <div className="mt-8 pb-2 flex lg:hidden justify-center gap-2">
             {items.map((_, index) => (
               <button
                 key={index}
@@ -107,7 +105,6 @@ const Gallery = ({
         </div>
       </section>
 
-      {/* Expanded overlay */}
       {expanded && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-6"

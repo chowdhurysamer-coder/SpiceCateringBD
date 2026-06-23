@@ -93,7 +93,6 @@ export default function Home() {
         id="home"
         className="relative min-h-screen flex items-center justify-center text-center overflow-hidden"
       >
-        {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -101,7 +100,6 @@ export default function Home() {
               "url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=85')",
           }}
         />
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#1A1008]/75 via-[#1A1008]/55 to-[#1A1008]/80" />
 
         <div className="relative z-10 px-6 max-w-5xl mx-auto">
@@ -140,7 +138,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <span className="text-xs text-stone-400 tracking-widest uppercase">Scroll</span>
           <div className="h-8 w-px bg-stone-500" />
@@ -275,12 +272,12 @@ export default function Home() {
       </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#1A1008]">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="text-xs text-[#C0581A] tracking-[0.3em] uppercase mb-4">Client Stories</div>
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl text-[#1A1008]"
+              className="text-3xl md:text-4xl lg:text-5xl text-white"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               What Our Clients Say
@@ -288,16 +285,16 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {testimonials.map((t) => (
-              <div key={t.name} className="bg-[#FAF7F2] rounded-2xl p-8">
+              <div key={t.name} className="bg-white/5 border border-white/10 rounded-2xl p-8">
                 <div className="flex gap-1 mb-4">
                   {[...Array(t.stars)].map((_, i) => (
                     <Star key={i} className="size-4 fill-[#D4A843] text-[#D4A843]" />
                   ))}
                 </div>
-                <p className="text-stone-600 leading-relaxed mb-6 italic">&ldquo;{t.quote}&rdquo;</p>
+                <p className="text-stone-300 leading-relaxed mb-6 italic">&ldquo;{t.quote}&rdquo;</p>
                 <div>
-                  <div className="font-semibold text-[#1A1008]">{t.name}</div>
-                  <div className="text-xs text-stone-400 mt-0.5">{t.role}</div>
+                  <div className="font-semibold text-white">{t.name}</div>
+                  <div className="text-xs text-stone-500 mt-0.5">{t.role}</div>
                 </div>
               </div>
             ))}
@@ -341,23 +338,22 @@ export default function Home() {
       </section>
 
       {/* ── CONTACT ──────────────────────────────────────────── */}
-      <section id="contact" className="py-24 bg-[#1A1008]">
+      <section id="contact" className="py-24 bg-[#FAF7F2]">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="text-xs text-[#C0581A] tracking-[0.3em] uppercase mb-4">Get in Touch</div>
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl text-white mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl text-[#1A1008] mb-6"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               Make an Enquiry
             </h2>
-            <p className="text-stone-400 max-w-xl mx-auto">
+            <p className="text-stone-500 max-w-xl mx-auto">
               Tell us about your event and we will get back to you within 24 hours with a personalised quote.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
-            {/* Contact info */}
             <div className="space-y-8">
               {[
                 { icon: Phone, label: "Phone", value: "01938-555666", href: "tel:+8801938555666" },
@@ -372,18 +368,18 @@ export default function Home() {
                   <div>
                     <div className="text-xs text-stone-500 uppercase tracking-widest mb-1">{label}</div>
                     {href ? (
-                      <a href={href} className="text-stone-200 hover:text-[#C0581A] transition-colors">{value}</a>
+                      <a href={href} className="text-[#1A1008] hover:text-[#C0581A] transition-colors">{value}</a>
                     ) : (
-                      <div className="text-stone-200">{value}</div>
+                      <div className="text-[#1A1008]">{value}</div>
                     )}
                   </div>
                 </div>
               ))}
               <div className="pt-4">
-                <div className="text-xs text-stone-500 uppercase tracking-widest mb-4">Follow Us</div>
+                <div className="text-xs text-stone-400 uppercase tracking-widest mb-4">Follow Us</div>
                 <div className="flex gap-3">
                   {["Facebook", "Instagram", "WhatsApp"].map((s) => (
-                    <span key={s} className="border border-stone-700 hover:border-[#C0581A] text-stone-400 hover:text-[#C0581A] text-xs px-4 py-2 transition-colors cursor-pointer">{s}</span>
+                    <span key={s} className="border border-stone-300 hover:border-[#C0581A] text-stone-500 hover:text-[#C0581A] text-xs px-4 py-2 transition-colors cursor-pointer">{s}</span>
                   ))}
                 </div>
               </div>
