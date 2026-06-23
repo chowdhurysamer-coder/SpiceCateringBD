@@ -57,7 +57,7 @@ const menu = [
   {
     id: "continental",
     label: "Continental",
-    tagline: "European classics — from rustic Italian plates to elegant grills.",
+    tagline: "European classics, from rustic Italian plates to elegant grills.",
     sections: [
       { name: "Breads & Starters", items: ["French Baguette", "Garlic Bread", "Bruschetta", "Caesar Salad", "Greek Salad"] },
       { name: "Grilled", items: ["Grilled Chicken Breast", "Grilled Atlantic Salmon", "Char-grilled Vegetables", "Beef Tenderloin", "Herb Lamb Cutlets"] },
@@ -74,16 +74,17 @@ export const MenuTabs = () => {
   return (
     <div>
       {/* Tabs */}
-      <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 border-b border-stone-200 pb-px mb-px">
+      <div className="flex flex-wrap justify-center gap-3 lg:gap-x-8 lg:gap-y-3 border-b-0 lg:border-b border-stone-200 pb-3 lg:pb-px mb-4 lg:mb-px">
         {menu.map((c) => (
           <button
             key={c.id}
             onClick={() => setActive(c.id)}
-            className={`relative pb-4 -mb-px text-sm tracking-[0.18em] uppercase transition-colors ${
-              active === c.id
-                ? "text-[#C0581A] border-b-2 border-[#C0581A]"
-                : "text-stone-400 hover:text-[#1A1008] border-b-2 border-transparent"
-            }`}
+            className={`relative text-xs tracking-[0.18em] uppercase transition-all
+              ${
+                active === c.id
+                  ? "lg:border-b-2 lg:border-[#C0581A] lg:pb-4 lg:-mb-px lg:border-0 lg:rounded-none lg:px-0 lg:bg-transparent text-[#C0581A] border border-[#C0581A] rounded-full px-4 py-1.5 bg-[#C0581A]/5"
+                  : "lg:text-stone-400 lg:hover:text-[#1A1008] lg:border-b-2 lg:border-transparent lg:pb-4 lg:-mb-px lg:border-0 lg:rounded-none lg:px-0 lg:bg-transparent text-stone-500 border border-stone-300 rounded-full px-4 py-1.5 hover:border-[#C0581A]/50 hover:text-[#C0581A]/70"
+              }`}
           >
             {c.label}
           </button>
@@ -91,7 +92,7 @@ export const MenuTabs = () => {
       </div>
 
       {/* Panel */}
-      <div className="border border-stone-200 border-t-0 px-6 sm:px-10 lg:px-16 py-14">
+      <div className="border border-stone-200 border-t-2 border-t-[#C0581A] lg:border-t-0 px-6 sm:px-10 lg:px-16 py-14">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <h3
             className="text-2xl lg:text-3xl text-[#C0581A] uppercase tracking-[0.15em] mb-4"
@@ -110,7 +111,7 @@ export const MenuTabs = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-12">
           {cuisine.sections.map((section) => (
             <div key={section.name} className="text-center">
-              <h4 className="text-xs tracking-[0.25em] uppercase text-stone-400 mb-5">
+              <h4 className="text-xs tracking-[0.25em] uppercase text-stone-500 mb-5 pb-3 border-b border-stone-100">
                 {section.name}
               </h4>
               <div>

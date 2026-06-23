@@ -33,7 +33,7 @@ const galleryItems = [
     id: "house",
     title: "House Catering",
     description:
-      "From intimate family gatherings to lavish house parties — SPICE is the best choice to be your catering partner.",
+      "From intimate family gatherings to lavish house parties, SPICE is the best choice to be your catering partner.",
     image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
   },
   {
@@ -57,7 +57,7 @@ const testimonials = [
     name: "Rahim Chowdhury",
     role: "Head of Operations, BRAC Bank",
     quote:
-      "SPICE has been our corporate canteen partner for three years. The consistency and quality is unmatched — our employees look forward to lunch every single day.",
+      "SPICE has been our corporate canteen partner for three years. The consistency and quality is unmatched. Our employees look forward to lunch every single day.",
     stars: 5,
   },
   {
@@ -103,7 +103,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#1A1008]/70 via-[#1A1008]/50 to-[#1A1008]/80" />
         <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
-          <div className="inline-block border border-[#C0581A]/60 text-[#D4A843] text-xs tracking-[0.3em] uppercase px-4 py-1.5 rounded-full mb-6">
+          <div className="text-[#D4A843] text-xs tracking-[0.3em] uppercase mb-6">
             Est. 2006 · Dhaka, Bangladesh
           </div>
           <h1
@@ -111,10 +111,15 @@ export default function Home() {
             style={{ fontFamily: "var(--font-playfair)", letterSpacing: "0.05em" }}
           >
             Catering for<br />
-            <span className="text-[#C0581A]">the Nation</span>
+            <span
+              className="text-[#C0581A]"
+              style={{ textShadow: "0 2px 12px rgba(0,0,0,0.55), 0 0 2px rgba(0,0,0,0.3)" }}
+            >
+              the Nation
+            </span>
           </h1>
           <p className="text-lg md:text-xl text-stone-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Since 2006, Spice Catering has set the standard in Bangladesh — from intimate
+            Since 2006, Spice Catering has set the standard in Bangladesh, from intimate
             dawats and grand weddings to corporate canteens serving thousands daily.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -176,7 +181,7 @@ export default function Home() {
                 gatherings of 25 to 2,500 guests, from Sylhet to Chittagong.
               </p>
               <p className="text-stone-500 leading-relaxed mb-8">
-                We look forward to building a real relationship with you — for life.
+                We look forward to building a real relationship with you, for life.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex items-center gap-3 text-sm text-stone-600">
@@ -208,19 +213,19 @@ export default function Home() {
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-5 max-w-[200px]">
-                <div className="text-[#C0581A] font-bold text-3xl" style={{ fontFamily: "var(--font-playfair)" }}>4.5★</div>
-                <div className="text-xs text-stone-500 mt-1">Average rating across 12,000+ reviews</div>
+                <div className="text-[#C0581A] font-bold text-3xl" style={{ fontFamily: "var(--font-playfair)" }}>4.3★</div>
+                <div className="text-xs text-stone-500 mt-1">Average rating across 800+ reviews</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── SERVICES GALLERY (21st.dev Gallery4 pattern) ─────── */}
+      {/* ── SERVICES GALLERY ─────── */}
       <section id="services">
         <Gallery
           title="Our Services"
-          description="From intimate house gatherings to grand corporate events and weddings — SPICE delivers excellence every time."
+          description="From intimate house gatherings to grand corporate events and weddings, SPICE delivers excellence every time."
           items={galleryItems}
         />
       </section>
@@ -237,7 +242,7 @@ export default function Home() {
               A Menu to Suit Every Occasion
             </h2>
             <p className="text-stone-500 mt-4 max-w-xl mx-auto">
-              Five distinct cuisines, dozens of dishes — each prepared with the finest local
+              Five distinct cuisines, dozens of dishes. Each prepared with the finest local
               produce and authentic flavours. Browse the menus below; all are fully customisable.
             </p>
           </div>
@@ -257,7 +262,7 @@ export default function Home() {
               Planning From Abroad?
             </h2>
             <p className="text-stone-500 mt-4 max-w-xl mx-auto leading-relaxed">
-              Convert between Bangladeshi Taka and your home currency to get a clear picture of your event budget — live exchange rates updated daily.
+              Convert between Bangladeshi Taka and your home currency to get a clear picture of your event budget. Live exchange rates updated daily.
             </p>
           </div>
           <div className="max-w-3xl mx-auto">
@@ -404,7 +409,7 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <div className="text-white font-medium mb-4 text-xs tracking-widest uppercase">Quick Links</div>
+              <div className="text-stone-300 font-medium mb-4 text-xs tracking-widest uppercase">Quick Links</div>
               <ul className="space-y-2 text-sm">
                 {[
                   { label: "About Us", href: "#about" },
@@ -421,7 +426,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <div className="text-white font-medium mb-4 text-xs tracking-widest uppercase">Contact</div>
+              <div className="text-stone-300 font-medium mb-4 text-xs tracking-widest uppercase">Contact</div>
               <div className="space-y-2 text-sm">
                 <div>House 12, Road 33, Gulshan 1</div>
                 <div>Dhaka 1212, Bangladesh</div>

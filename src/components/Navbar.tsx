@@ -43,15 +43,27 @@ export const Navbar = () => {
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-7">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="text-stone-300 hover:text-white text-sm tracking-wider transition-colors">
+            <a
+              key={l.href}
+              href={l.href}
+              className="relative text-stone-300 hover:text-[#C0581A] text-sm tracking-wider transition-colors group"
+            >
               {l.label}
+              <span className="absolute bottom-0 left-0 h-px w-0 bg-[#C0581A] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
 
-        {/* Phone CTA */}
-        <a href="tel:+8801938555666" className="hidden lg:flex items-center gap-2 bg-[#C0581A] hover:bg-[#a84a15] text-white text-sm px-4 py-2 rounded-full transition-colors">
-          <Phone className="size-4" /> 01938-555666
+        {/* Phone CTA — plain text link on desktop */}
+        <a
+          href="tel:+8801938555666"
+          className="hidden lg:flex items-center gap-1.5 text-stone-200 hover:text-[#C0581A] text-sm tracking-wider transition-colors relative group"
+        >
+          <Phone className="size-3.5 shrink-0" />
+          <span className="relative">
+            01938-555666
+            <span className="absolute bottom-0 left-0 h-px w-0 bg-[#C0581A] transition-all duration-300 group-hover:w-full" />
+          </span>
         </a>
 
         {/* Burger */}

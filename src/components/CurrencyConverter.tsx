@@ -23,6 +23,11 @@ const CURRENCIES = [
 
 const QUICK_TARGETS = ["USD", "GBP", "EUR", "AED", "SAR", "INR", "SGD", "MYR"];
 
+const fetchRates = () =>
+  fetch("https://open.er-api.com/v6/latest/USD")
+    .then((r) => r.json())
+    .then((data) => (data.result === "success" ? data.rates : null));
+
 export const CurrencyConverter = () => {
   const [rates, setRates] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(true);
@@ -33,17 +38,18 @@ export const CurrencyConverter = () => {
   const [result, setResult] = useState<number | null>(null);
 
   useEffect(() => {
-    fetch("https://open.er-api.com/v6/latest/USD")
-      .then((r) => r.json())
-      .then((data) => {
-        if (data.result === "success") {
-          setRates(data.rates);
-        } else {
-          setError(true);
-        }
-      })
+    fetchRates()
+      .then((r) => { if (r) setRates(r); else setError(true); })
       .catch(() => setError(true))
       .finally(() => setLoading(false));
+  }, []);
+
+  // Refresh rates every hour
+  useEffect(() => {
+    const id = setInterval(() => {
+      fetchRates().then((r) => { if (r) setRates(r); }).catch(() => {});
+    }, 60 * 60 * 1000);
+    return () => clearInterval(id);
   }, []);
 
   const convert = useCallback(
@@ -101,12 +107,12 @@ export const CurrencyConverter = () => {
           <div className="flex gap-2">
             <div className="flex-1 border border-[#C0581A]/30 bg-[#FAF7F2] rounded-xl px-4 py-3 min-w-0">
               {loading ? (
-                <span className="text-stone-400 text-sm">Loading rates…</span>
+                <span className="text-stone-400 text-sm">Loading rates...</span>
               ) : error ? (
                 <span className="text-red-400 text-sm">Unavailable</span>
               ) : (
                 <span className="text-lg font-semibold text-[#C0581A]">
-                  {result !== null ? `${toInfo.symbol} ${result.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "—"}
+                  {result !== null ? `${toInfo.symbol} ${result.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : "-"}
                 </span>
               )}
             </div>
@@ -132,12 +138,12 @@ export const CurrencyConverter = () => {
       {!loading && !error && (
         <div>
           <div className="text-xs text-stone-400 uppercase tracking-widest mb-4 text-center">
-            1,000 {fromInfo.name} equals
+            Common Currency Conversions
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {QUICK_TARGETS.filter((t) => t !== from).slice(0, 8).map((code) => {
               const info = CURRENCIES.find((c) => c.code === code)!;
-              const n = 1000 / (rates[from] || 1) * (rates[code] || 1);
+              const n = (parseFloat(amount) || 0) / (rates[from] || 1) * (rates[code] || 1);
               return (
                 <div
                   key={code}
