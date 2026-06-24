@@ -5,7 +5,8 @@ import { ContactForm } from "@/components/ContactForm";
 import { MenuTabs } from "@/components/MenuTabs";
 import { CurrencyConverter } from "@/components/CurrencyConverter";
 import { Logo } from "@/components/Logo";
-import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 /* ─── Brand palette ──────────────────────────
    Primary orange : #C0581A
@@ -52,36 +53,6 @@ const galleryItems = [
   },
 ];
 
-const testimonials = [
-  {
-    name: "Rahim Chowdhury",
-    role: "Head of Operations, BRAC Bank",
-    quote:
-      "SPICE has been our corporate canteen partner for three years. The consistency and quality is unmatched. Our employees look forward to lunch every single day.",
-    stars: 5,
-  },
-  {
-    name: "Nadia Islam",
-    role: "Bride, December 2023",
-    quote:
-      "Our wedding feast was absolutely perfect. Every single guest complimented the food. SPICE turned our most important day into a culinary memory.",
-    stars: 5,
-  },
-  {
-    name: "Karim Ahmed",
-    role: "Director, Grameenphone",
-    quote:
-      "We've used SPICE for quarterly board events. Presentation is always immaculate and the service is seamlessly professional.",
-    stars: 5,
-  },
-  {
-    name: "Fatema Begum",
-    role: "Event Host",
-    quote:
-      "Spice Catering made our daughter's birthday party a night to remember. The food was delicious and the team were incredibly helpful and friendly.",
-    stars: 5,
-  },
-];
 
 export default function Home() {
   return (
@@ -272,7 +243,7 @@ export default function Home() {
       </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-      <section className="py-24 bg-[#1A1008]">
+      <section className="py-24 bg-[#1A1008] overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="text-xs text-[#C0581A] tracking-[0.3em] uppercase mb-4">Client Stories</div>
@@ -283,23 +254,8 @@ export default function Home() {
               What Our Clients Say
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {testimonials.map((t) => (
-              <div key={t.name} className="bg-white/5 border border-white/10 rounded-2xl p-8">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(t.stars)].map((_, i) => (
-                    <Star key={i} className="size-4 fill-[#D4A843] text-[#D4A843]" />
-                  ))}
-                </div>
-                <p className="text-stone-300 leading-relaxed mb-6 italic">&ldquo;{t.quote}&rdquo;</p>
-                <div>
-                  <div className="font-semibold text-white">{t.name}</div>
-                  <div className="text-xs text-stone-500 mt-0.5">{t.role}</div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
+        <TestimonialsCarousel />
       </section>
 
       {/* ── GALLERY ──────────────────────────────────────────── */}

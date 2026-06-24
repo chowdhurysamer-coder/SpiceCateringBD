@@ -74,32 +74,41 @@ export const MenuTabs = () => {
   return (
     <div>
       {/* Tabs */}
-      <div className="flex flex-wrap justify-center gap-3 lg:gap-x-8 lg:gap-y-3 border-b-0 lg:border-b border-stone-200 pb-3 lg:pb-px mb-4 lg:mb-px">
+      <div className="flex flex-wrap justify-center gap-3 lg:gap-x-10 lg:gap-y-3 border-b-0 lg:border-b border-stone-200 pb-3 lg:pb-0 mb-4 lg:mb-0">
         {menu.map((c) => (
           <button
             key={c.id}
             onClick={() => setActive(c.id)}
-            className={`relative text-xs tracking-[0.18em] uppercase transition-all
-              ${
-                active === c.id
-                  ? "lg:border-b-2 lg:border-[#C0581A] lg:pb-4 lg:-mb-px lg:border-0 lg:rounded-none lg:px-0 lg:bg-transparent text-[#C0581A] border border-[#C0581A] rounded-full px-4 py-1.5 bg-[#C0581A]/5"
-                  : "lg:text-stone-400 lg:hover:text-[#1A1008] lg:border-b-2 lg:border-transparent lg:pb-4 lg:-mb-px lg:border-0 lg:rounded-none lg:px-0 lg:bg-transparent text-stone-500 border border-stone-300 rounded-full px-4 py-1.5 hover:border-[#C0581A]/50 hover:text-[#C0581A]/70"
+            className={`relative text-xs tracking-[0.22em] uppercase transition-all duration-300
+              ${active === c.id
+                ? "lg:text-[#1A1008] lg:pb-5 lg:-mb-px text-[#C0581A] border border-[#C0581A] rounded-full px-4 py-1.5 bg-[#C0581A]/5 lg:border-0 lg:rounded-none lg:px-0 lg:bg-transparent"
+                : "lg:text-stone-400 lg:hover:text-stone-600 lg:pb-5 lg:-mb-px text-stone-500 border border-stone-300 rounded-full px-4 py-1.5 hover:border-[#C0581A]/40 hover:text-[#C0581A]/70 lg:border-0 lg:rounded-none lg:px-0 lg:bg-transparent"
               }`}
           >
             {c.label}
+            {active === c.id && (
+              <span className="hidden lg:block absolute bottom-0 left-0 right-0 h-px bg-[#D4A843]" />
+            )}
           </button>
         ))}
       </div>
 
       {/* Panel */}
-      <div className="border border-stone-200 border-t-2 border-t-[#C0581A] lg:border-t-0 px-6 sm:px-10 lg:px-16 py-14">
+      <div className="px-6 sm:px-10 lg:px-16 py-14">
+        {/* Cuisine heading */}
         <div className="text-center max-w-2xl mx-auto mb-14">
           <h3
-            className="text-2xl lg:text-3xl text-[#C0581A] uppercase tracking-[0.15em] mb-4"
+            className="text-2xl lg:text-3xl text-[#C0581A] uppercase tracking-[0.2em] mb-5"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             {cuisine.label} Menu
           </h3>
+          {/* Gold ornament */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="h-px w-14 bg-[#D4A843]/50" />
+            <span className="text-[#D4A843]/80 text-xs">✦</span>
+            <div className="h-px w-14 bg-[#D4A843]/50" />
+          </div>
           <p
             className="text-stone-500 italic text-lg leading-relaxed"
             style={{ fontFamily: "var(--font-playfair)" }}
@@ -108,17 +117,20 @@ export const MenuTabs = () => {
           </p>
         </div>
 
+        {/* Menu grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-12">
           {cuisine.sections.map((section) => (
             <div key={section.name} className="text-center">
-              <h4 className="text-xs tracking-[0.25em] uppercase text-stone-500 mb-5 pb-3 border-b border-stone-100">
+              <h4 className="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-5 pb-3 border-b border-[#D4A843]/20">
                 {section.name}
               </h4>
               <div>
                 {section.items.map((dish, i) => (
                   <div key={dish}>
-                    {i > 0 && <div className="mx-auto my-3 h-px w-8 bg-stone-200" />}
-                    <p className="text-stone-700 leading-snug">{dish}</p>
+                    {i > 0 && (
+                      <div className="flex justify-center my-2.5 text-stone-300 text-xs leading-none">·</div>
+                    )}
+                    <p className="text-stone-600 leading-snug text-sm">{dish}</p>
                   </div>
                 ))}
               </div>
@@ -126,14 +138,15 @@ export const MenuTabs = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-stone-400 text-sm mb-6 max-w-lg mx-auto">
+        {/* CTA */}
+        <div className="mt-16 pt-12 border-t border-stone-100 text-center">
+          <p className="text-stone-400 text-sm mb-8 max-w-lg mx-auto leading-relaxed">
             Every menu is fully customisable to your event, guest count and dietary requirements.
             Contact us for detailed pricing and personalised options.
           </p>
           <a
             href="#contact"
-            className="inline-block bg-[#C0581A] hover:bg-[#a84a15] text-white px-9 py-3.5 text-sm tracking-widest uppercase transition-colors"
+            className="inline-block border border-[#C0581A] text-[#C0581A] hover:bg-[#C0581A] hover:text-white px-10 py-3.5 text-xs tracking-[0.25em] uppercase transition-all duration-300"
           >
             Make an Enquiry
           </a>
