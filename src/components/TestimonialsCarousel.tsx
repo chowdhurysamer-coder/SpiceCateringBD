@@ -26,7 +26,7 @@ const REVIEWS: Review[] = [
   {
     name: "Morshedul Alam",
     role: "Google Review · Local Guide",
-    quote: "Five star catering service. Located in Gulshan area. Every day they are serving 3,500 meals, with a capacity for 15,000 meals at a time. Remarkable scale — and consistent quality throughout.",
+    quote: "Five star catering service.Locate in Gulshan area.Everyday they are serving 3500 meals.Its has a setup for 15000 meals serving capacity at a time. They are serving all kind of local and different kind of Thai,Chinese, Continental food with turkish and Arabic Food. Pre order basis food catering. I've tested one of Their dessert Item name Apple pie. They also offer authentic Bakery items. They have best quality Kacchi with premium quality mutton. You could try for your next family or office party.",
     stars: 5,
   },
   {
@@ -38,7 +38,7 @@ const REVIEWS: Review[] = [
   {
     name: "Abdur Rohman",
     role: "Google Review · Local Guide",
-    quote: "Very good food and service. Loved their kacci — the quality and deliciousness of the food is unmatched. Surely recommend anyone to order from them.",
+    quote: "Very good food and service. Loved their kacci and the quality of the offered food is too delicious. Surely recommend anyone to order from them.",
     stars: 5,
   },
   {
@@ -50,7 +50,7 @@ const REVIEWS: Review[] = [
   {
     name: "Readul Hasan Chayan",
     role: "Google Review · Local Guide",
-    quote: "Great service! We recently had a family occasion and were so lucky to find Spice Catering. Truly impressed by their attention to detail and the quality of every dish.",
+    quote: "Great service! We recently had a family occasion and were so lucky to find Spice catering online. We met with the manager Mr. Rakib and fixed a plan after a discussion with him. He showed us the kitchen inside and guided us through the other procedures. We planned to serve the dishes in a buffet style; someone from their office visited the venue (incidentally our house) one day before to make sure everything was okay and sketched an initial plan for the next day. On the day of the occasion, they reached our venue early in the morning to set up the buffet counter and other necessary stuff. The food reached around 12:30 and everything went according to the plan afterwards. All the guests highly praised the food, and the servers were very friendly and well-trained as well. Although the pricing was a bit on the higher side, they compensated that very well with the quality of the food and amazing service. All in all, they were splendid! Given the horrible \"Baburchi\" culture here, they were a breath of fresh air. I'd hire them again without a doubt - way to go!!",
     stars: 5,
   },
   {
